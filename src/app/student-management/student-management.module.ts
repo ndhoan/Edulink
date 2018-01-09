@@ -9,7 +9,8 @@ const routesConfig: Routes = [
 
   @NgModule({
     imports: [
-          RouterModule.forChild(routesConfig)
+          RouterModule.forChild(routesConfig),
+          CommonModule
       ],
     declarations: [
         StudentManagementComponent
