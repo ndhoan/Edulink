@@ -17,7 +17,7 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
     AboutUsComponent,
     UpComingVideosComponent,
     NewCoursesComponent,
-    TopMenuComponent
+    TopMenuComponent,
   ],
   imports: [
     BrowserModule
