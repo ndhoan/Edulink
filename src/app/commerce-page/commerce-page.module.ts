@@ -9,7 +9,7 @@ import { NewCoursesComponent } from '../new-courses/new-courses.component';
 import { TopMenuComponent } from '../top-menu/top-menu.component';
 
 const routesConfig: Routes = [
-    {path: 'home', component: CommercePageComponent }
+    {path: '', component: CommercePageComponent }
   ]
 
   @NgModule({
