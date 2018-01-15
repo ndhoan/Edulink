@@ -25,6 +25,7 @@ const routesConfig: Routes = [
         NewCoursesComponent,
         TopMenuComponent
     ],
+    exports: [TopMenuComponent]
   })
 
   export class CommercePageModule{}
