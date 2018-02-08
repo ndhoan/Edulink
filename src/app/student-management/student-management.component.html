@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right">
+    Phan Binh
+    <img src="http://www.drawingteachers.com/image-files/draw-a-human-face-boy-200px.jpg" style="width:30px">
+  </span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+        <img src="http://www.drawingteachers.com/image-files/draw-a-human-face-boy-200px.jpg" class="w3-circle w3-margin-right" style="width:46px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span>Welcome, <strong>Phan Binh</strong></span><br>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5 class="w3-bar-item w3-padding"> <i class="fa fa-home fa-fw">Dashboard</i> </h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope  fa-fw"></i>  Messages</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-calendar fa-fw"></i>  Calendar</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-table fa-fw"></i>  Classes Schedule  </a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-check fa-fw"></i>  Staff Attendace</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  News</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-graduation-cap fa-fw"></i>  Students</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw"></i>  Parents</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-folder fa-fw"></i>  Assignment</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+  </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+  </header>
+  <!-- My Dashboard -->
+  <div class="w3-row-padding w3-margin-bottom">
+    
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>10</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <a href="#" target="_blank" style="
+        width: 100%;              
+        color: white;
+        text-decoration: none;
+        display: inline-block;">
+        <h4>Classes</h4>
+      </a>
+        
+      </div>
+      </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-user w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>299</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <a href="#" target="_blank" style="
+        width: 100%;              
+        color: white;
+        text-decoration: none;
+        display: inline-block;">
+        <h4>Students</h4>
+      </a>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-male w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>23</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <a href="#" target="_blank" style="
+        width: 100%;              
+        color: white;
+        text-decoration: none;
+        display: inline-block;">
+        <h4>Teachers</h4>
+      </a>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-inbox w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>50</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <a href="#" target="_blank" style="
+        width: 100%;              
+        color: white;
+        text-decoration: none;
+        display: inline-block;">
+        <h4>Inbox</h4>
+      </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student LeaderBoard -->
+  <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half" >
+          <!-- style=" border-top-style: solid; border-top-color: red; margin-left: 16px -->
+          <h5 style="border-top-style: solid; border-top-color: red; padding: 20px"><i class="fa fa-trophy"> Student's Leaderboad</i></h5>
+          <div class="w3-half" style="float:left">
+            <img src="http://www.drawingteachers.com/image-files/draw-a-human-face-boy-200px.jpg" class="w3-circle w3-margin-right" style="width:120px" >
+            <h6 style="margin-left:30px; margin-bottom: 20px">Phan Binh</h6>
+        </div >
+        <div class="w3-half; float: right">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRacm3MtbRCKtPvu44Rpzba_mbq4uxboCvzj7PXfR9jws0VfBS5" class="w3-circle w3-margin-right" style="width:120px" >
+            <h6 style="margin-left:30px; margin-bottom: 20px">Phuong</h6>       
+          </div > 
+          <div class="w3-clear"></div>
+          
+           <!-- News and Events -->
+        <h5 style="border-top-style: solid; border-top-color: coral; padding: 20px"><i class="fa fa-globe"> News</i></h5>
+        <div>
+        <tr>
+            <td>
+              <div class="day_month" style="font-weight: bold;">
+                31/01/2018:
+              </div>
+            </td>
+            <td>
+              <div class="post_title" style="margin-left: 5px">
+                <a href="#x?tabid=292&amp;newsid=10407" title="Thông báo V/v tổ chức Ngày hội việc làm 2018">
+                  Thông báo V/v tổ chức Ngày cắm trại 2018</a>&nbsp;&nbsp;<img  src="http://www.jspowersports.com/img/logos/new-sign.jpg" style="border-width:0px; width:30px">
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+              <td>
+                <div class="day_month" style="font-weight: bold;">
+                  29/01/2018:
+                </div>
+              </td>
+              <td>
+                <div class="post_title" style="margin-left: 5px">
+                  <a href="Default.aspx?tabid=292&amp;newsid=10407" title="Thông báo V/v tổ chức Ngày hội việc làm 2018">
+                    Thông báo V/v nghỉ tết Âm lịch</a>&nbsp;&nbsp;<img  src="http://www.jspowersports.com/img/logos/new-sign.jpg" style="border-width:0px; width:30px">
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+                <td>
+                  <div class="day_month" style="font-weight: bold;">
+                    27/01/2018:
+                  </div>
+                </td>
+                <td>
+                  <div class="post_title" style="margin-left: 5px">
+                    <a href="Default.aspx?tabid=292&amp;newsid=10407" title="Thông báo V/v tổ chức Ngày hội việc làm 2018">
+                      Thông báo V/v tổ chức dã ngoại cho học sinh, giáo viên toàn trường</a>&nbsp;&nbsp;<img  src="http://www.jspowersports.com/img/logos/new-sign.jpg" style="border-width:0px; width:30px">
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                  <td>
+                    <div class="day_month" style="font-weight: bold;">
+                      19/12/2017:
+                    </div>
+                  </td>
+                  <td>
+                    <div class="post_title" style="margin-left: 5px">
+                      <a href="Default.aspx?tabid=292&amp;newsid=10407" title="Thông báo V/v tổ chức Ngày hội việc làm 2018">
+                        Thông báo điểm học sinh</a>
+                      </div>
+                  </td>
+                </tr>
+              </div>
+            <div class="w3-clear"></div>
+
+      <!-- Quick Links -->
+      
+        <h5 style="border-top-style: solid; border-top-color:rgb(33, 150, 243); padding: 20px"><i class="fa fa-hand-o-up"> Quick Links</i></h5>
+        <div class="w3-row-padding">
+          <div class="w3-half">
+              <a href="#" target="_blank" style="background-color: #4CAF50;
+              width: 100%;
+              color: white;
+              padding: 10px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block; ">News feed</a>
+          </div>
+          
+          <div class="w3-half">
+              <a href="#" target="_blank" style="background-color: #4CAF50;
+              width: 100%;              
+              color: white;
+              padding: 10px;
+              margin-bottom: 10px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;">Events</a>
+          </div>
+
+          <div class="w3-half">
+              <a href="#" target="_blank" style="background-color: #4CAF50;
+              width: 100%;              
+              color: white;
+              padding: 10px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;">Class schedule</a>
+          </div>
+
+          <div class="w3-half">
+              <a href="#" target="_blank" style="background-color: #4CAF50;
+              width: 100%;              
+              color: white;
+              padding: 10px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;">Mail/SMS</a>
+          </div>
+
+        </div>
+      </div>
+       
+      <!-- Messager -->
+      <div class="w3-half" style=" max-width: 493px; margin-left:20px">
+          <h5 style="padding:20px; border-top-style: solid;border-top-color: coral;"><i class="fa fa-commenting-o"> Messages</i></h5>        
+        <table class="w3-table w3-striped w3-white">
+          <tr>
+            <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
+            <td>New record, over 90 views.</td>
+            <td><i>10 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
+            <td>Database error.</td>
+            <td><i>15 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
+            <td>New record, over 40 users.</td>
+            <td><i>17 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
+            <td>New comments.</td>
+            <td><i>25 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
+            <td>Check transactions.</td>
+            <td><i>28 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
+            <td>CPU overload.</td>
+            <td><i>35 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
+            <td>New shares.</td>
+            <td><i>39 mins</i></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="w3-half" style=" max-width: 493px; margin-left:20px">
+          <h5 style="padding:20px; border-top-style: solid;border-top-color: rgb(33, 150, 243);"><i class="fa fa-bolt"> Quizzes</i></h5>        
+          <div class="w3-container">
+              <div class="w3-light-grey">
+                <div class="w3-green" style="height:24px;width:25%"></div>
+              </div><br>
+              
+              <div class="w3-light-grey">
+                <div class="w3-red" style="height:24px;width:50%"></div>
+              </div><br>
+              
+              <div class="w3-light-grey">
+                <div class="w3-blue" style="height:24px;width:75"></div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+
+ 
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4>EDULINK</h4>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"> &copy; Guru</a></p>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

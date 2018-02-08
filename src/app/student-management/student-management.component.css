@@ -370,7 +370,7 @@ a {
 }
 
 .w3-tooltip .w3-text {
-    display: none
+    display: nonen
 }
 
 .w3-tooltip:hover .w3-text {
