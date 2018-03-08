@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import { StudentManagementComponent } from './student-management/student-management.component';
 import { LoginComponent } from './login/login.component';
+import { FormNotificationComponent } from './form-notification/form-notification.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,5 +21,5 @@ import { LoginComponent } from './login/login.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { }  
   

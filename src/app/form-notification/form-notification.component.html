@@ -1,0 +1,217 @@
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h3>Đăng thông báo</h3>
+
+<div>
+  <form action="/action_page.php">
+    <label for="tieu_de">Tiêu đề</label>
+    <input type="text" id="tieu_de" name="tieude" placeholder="Tiêu đề..">
+
+    <label for="mieu_ta">Miêu tả</label>
+    <input type="text" id="mieu_ta" name="mieuta" placeholder="Miêu tả..">
+
+    <form action="http://www.example.com/upload.php" method="post">
+      <p>Upload pdf file:</p>
+      <input type="file" name="pdf_file" />
+    </form>
+    <label for="doi_tuong">Đối tượng</label>
+    <select id="doi_tuong" name="Đối tượng">
+      <option value="Toàn trường">Toàn trường</option>
+      <option value="Lớp">Lớp</option>
+      <option value="Cá nhân">Cá nhân</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html> -->
+<!-- 
+<div class="container">
+  <div class="col-md-8 col-xs-12">
+    <form [formGroup]="_form" novalidate (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="card">
+            <div class="card-header">
+              <h6>{{title}}</h6>
+            </div>
+            <div class="card-block">
+              <div class="form-group">
+                <label class="form-control-label">Tiêu đề:</label>
+                <input type="text" class="form-control" placeholder="Tiêu đề" formControlName="teacher" />
+                <small [hidden]="_form.controls.teacher.valid" class="text-danger">
+                  cần điền Tiêu đề!
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" formArrayName="schools">
+          <div *ngFor="let school of _form.controls['schools'].controls; let i=index">
+            <div class="card">
+              <div class="card-header text-primary">
+                <span style="font-weight: 500;">{{i + 1}} -</span>
+                <span>Miêu tả: {{ _form.value.schools[i].school_name }}</span>
+                <span class="pull-right" *ngIf="_form.controls['schools'].controls.length > 1" (click)="removeSchool(i)">
+                  <i class="fa fa-remove text-danger"></i>
+                </span>
+              </div>
+              <div class="card-block" formGroupName="{{i}}">
+                <div class="form-group">
+                  <label class="form-control-label">Miêu tả</label>
+                  <input type="text" class="form-control" placeholder="School Name" formControlName="school_name" />
+                  <small [hidden]="_form.controls.schools.controls[i].controls.school_name.valid" class="text-danger">
+                    cần điền miêu tả!
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label class="form-control-label">School Description</label>
+                  <textarea rows="3" type="text" class="form-control" placeholder="Description" formControlName="school_description"></textarea>
+                </div>
+                <div class="row" formArrayName="events">
+                  <div *ngFor="let event of school.controls['events'].controls; let idx=index">
+                    <div class="card">
+                      <div class="card-header">
+                        <span style="font-weight: 500;">{{idx + 1}} -</span>
+                        <span>Event Name</span>
+                        <span class="pull-right" *ngIf="school.controls['events'].controls.length > 1" (click)="removeEvent(i)">
+                          <i class="fa fa-remove text-danger"></i>
+                        </span>
+                      </div>
+                      <div formGroupName="{{idx}}">
+                        <div class="card-block">
+                          <div class="form-group col-xs-12">
+                            <label class="form-control-label">Event Name</label>
+                            <input type="text" class="form-control" placeholder="Event Name" formControlName="event_name">
+                            <small [hidden]="school.controls.events.controls[idx].controls.event_name.valid" class="text-danger">
+                              Event Name is required!
+                            </small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-footer">
+                        <a class="btn btn-success btn-minimize pull-right" (click)="addEvent(i)">Add another event +</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer text-primary">
+                <a class="btn" (click)="addSchool()">Add another school +</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12" style="margin-bottom:10px;">
+        <button class="btn btn-primary pull-right" type="submit" [disabled]="!_form.valid">Submit</button>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="col-md-4 col-xs-12">
+    <div class="card-footer">
+      <h5>Field Values</h5>
+      <pre>{{ _form.value | json }}</pre>
+    </div>
+  </div>
+</div> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <link rel="stylesheet" href="angularjs-datetime-picker.css" />
+ <script src="angularjs-datetime-picker.js"></script> -->
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="margin-20">
+          <h4>Đăng thông báo</h4>
+        </div>
+        <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+          <div class="form-group">
+            <label>Tiêu đề</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Tiêu đề...">
+            <small *ngIf="!myForm.controls.name.valid" class="text-danger">
+              Tiều đề (tối thiểu 5 kí tự).
+            </small>
+            <form action="/action_page.php">
+
+              <label>Miêu tả</label>
+              <input type="text" class="form-control" formControlName="description" placeholder="Miêu tả...">
+
+
+              <form action="http://www.example.com/upload.php" method="post">
+                <p>Upload pdf file:</p>
+                <input type="file" name="pdf_file" />
+              </form>
+              <label for="doi_tuong">Đối tượng</label>
+              <select id="doi_tuong" name="Đối tượng">
+                <option value="Toàn trường">Toàn trường</option>
+                <option value="Lớp">Lớp</option>
+                <option value="Cá nhân">Cá nhân</option>
+              </select>
+            </form>
+          </div>
+          <!--addresses-->
+          <div formArrayName="addresses">
+            <div *ngFor="let address of myForm.controls.addresses.controls; let i=index" class="panel panel-default">
+              <div class="panel-heading">
+                <span>Chọn thời gian {{i + 1}}</span>
+                <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.addresses.controls.length > 1" (click)="removeAddress(i)"></span>
+              </div>
+              <div class="panel-body" [formGroupName]="i">
+                <!-- <div class="form-group col-xs-6">
+                    <label>
+                        Date
+                        <input [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3">
+                        <owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time>
+                      </label>
+            
+                      <label>
+                        Time
+                        <input [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
+                        <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
+                      </label>
+                </div> -->
+                <div class="ui-g-12 ui-md-4">
+                    <h3>Time</h3>
+                    <p-calendar [(ngModel)]="date7" [showTime]="true"></p-calendar> {{date7}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="margin-20">
+            <a (click)="addAddress()" style="cursor: default">
+              Thêm khoảng thời gian +
+            </a>
+          </div>
+
+          <div class="margin-20">
+            <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>
+          </div>
+          <div class="clearfix"></div>
+
+          <!-- <div class="margin-20">
+          <div>myForm details:-</div>
+          <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
+          <pre>form value: <br>{{myForm.value | json}}</pre>
+        </div> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
