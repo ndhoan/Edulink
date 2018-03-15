@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core'
-import { Routes, RouterModule } from '@angular/router'
-import { CommercePageComponent } from './commerce-page.component'
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { CommercePageComponent } from './commerce-page.component';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from '../home-page/home-page.component';
 import { AboutUsComponent } from '../about-us/about-us.component';

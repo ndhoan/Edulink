@@ -1,3 +1,4 @@
+import { CommercePageModule } from './../commerce-page/commerce-page.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login.component';
@@ -10,6 +11,7 @@ const routesConfig: Routes = [
 
   @NgModule({
     imports: [
+            CommercePageModule,
             RouterModule.forChild(routesConfig),
             CommonModule
       ],

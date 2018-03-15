@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import AWS = require('aws-sdk');
 
 @Component({
   selector: 'app-student-management',

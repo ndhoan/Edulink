@@ -17,7 +17,7 @@ const routesConfig: Routes = [
         StudentManagementModule,
         PricePageModule,
         LoginModule,
-        FormNotificationModule,
+        FormNotificationModule, 
         RouterModule.forRoot(routesConfig),
         CommonModule
       ],
