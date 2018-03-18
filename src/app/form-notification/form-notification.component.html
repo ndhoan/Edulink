@@ -8,12 +8,16 @@
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
+
 <body class="w3-light-grey">
-    <!-- <app-student-management></app-student-management>   -->
-  
+    <app-student-management-topbar></app-student-management-topbar>
+    <app-student-management-sidebar></app-student-management-sidebar>
+    
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-11">
         <div class="margin-20">
           <h4>Đăng thông báo</h4>
         </div>
@@ -27,8 +31,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
             <form action="/action_page.php">
 
               <label>Miêu tả</label>
-              <input type="text" class="form-control" formControlName="description" placeholder="Miêu tả...">
-
+              <!-- <input type="text" class="form-control" formControlName="description" placeholder="Miêu tả..."> -->
+              <textarea rows="4" cols="50" class="form-control" ng-model="text" formControlName="description" placeholder="Miêu tả..."> 
+              </textarea>
 
               <form action="http://www.example.com/upload.php" method="post">
                 <p>Upload pdf file:</p>
@@ -82,6 +87,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </div>
+  </div>
+  
 </body>
 
 </html>
