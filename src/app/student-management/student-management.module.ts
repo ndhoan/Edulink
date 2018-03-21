@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { FormNotificationModule } from '../form-notification/form-notification.module';
 
 const routesConfig: Routes = [
-    {path: 'student-management', component: StudentManagementComponent },
+    {path: 'student-management', component: StudentManagementComponent, data: { animation: 'student-management' } },
   ]
 
   @NgModule({

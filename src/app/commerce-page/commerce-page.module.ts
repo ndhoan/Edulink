@@ -8,6 +8,7 @@ import { UpComingVideosComponent } from '../up-coming-videos/up-coming-videos.co
 import { NewCoursesComponent } from '../new-courses/new-courses.component';
 import { TopMenuComponent } from '../top-menu/top-menu.component';
 import { LoginComponent } from '../login/login.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 const routesConfig: Routes = [
     {path: '', component: CommercePageComponent }
@@ -15,8 +16,10 @@ const routesConfig: Routes = [
 
   @NgModule({
     imports: [
+      //ngx-bootstrap
+          CarouselModule.forRoot(),
           RouterModule.forChild(routesConfig),
-          CommonModule
+          CommonModule  
       ],
     declarations: [
         CommercePageComponent,
@@ -26,7 +29,7 @@ const routesConfig: Routes = [
         NewCoursesComponent,
         TopMenuComponent, 
     ],
-    exports: [TopMenuComponent]
+    exports: [TopMenuComponent, NewCoursesComponent]
   })
 
   export class CommercePageModule{}

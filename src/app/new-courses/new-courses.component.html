@@ -64,7 +64,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
-  <div class="w3-row-padding w3-margin-top">
+  <!-- <div class="w3-row-padding w3-margin-top" [@scrollAnimation]="state">
     <div class="w3-third w3-container w3-margin-bottom">
       <img src="https://www.w3schools.com/w3css/img_nature.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
@@ -86,4 +86,31 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
       </div>
     </div>
-  </div>
+  </div> -->
+  <carousel>
+      <slide>
+        <img src="https://www.w3schools.com/w3css/img_forest.jpg" alt="First slide" style="display: block; width: 100%;">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </slide>
+      <slide>
+        <img src="https://www.w3schools.com/w3css/img_nature.jpg" alt="Second slide" style="display: block; width: 100%;">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </slide>
+      <slide>
+        <img src="https://www.w3schools.com/w3css/img_lights.jpg" alt="Third slide" style="display: block; width: 100%;">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </slide>
+    </carousel>
+                             
+                  
+</body>
+</html>  

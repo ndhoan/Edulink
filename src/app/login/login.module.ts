@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 
 
 const routesConfig: Routes = [
-    {path: 'login', component: LoginComponent }
+    {path: 'login', component: LoginComponent, data: { animation: 'login' } }
   ]
 
   @NgModule({

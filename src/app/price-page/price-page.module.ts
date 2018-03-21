@@ -6,7 +6,7 @@ import { CommercePageModule } from '../commerce-page/commerce-page.module'
 
 
 const routesConfig: Routes = [
-    {path: 'price', component: PricePageComponent }
+    {path: 'price', component: PricePageComponent,  data: { animation: 'price' }  }
   ]
 
   @NgModule({
