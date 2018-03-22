@@ -4,39 +4,73 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 
 <body>
-  
-<div class="top">
-    <div class="row padding white">
+ <!-- Navigation -->
+ <!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">  
+<div class="collapse navbar-collapse navbar-nav ml-auto">
       <div class="col s2 container">
         <div href="#" class = "center">
             <img src = "https://solveeducation.org/wp-content/uploads/Solve-Education-Logo-1000px.png"height="42" width="84" >
         </div>
       </div>
-      <div class="col s1">
-        <a href="#" class="button block red">HOME</a>
+      <div class="nav-item">
+        <a href="#" class="nav-link js-scroll-trigger">HOME</a>
       </div>
-      <div class="col s1">  
-        <a href="#about" class="button block purple">ABOUT</a>
+      <div class="nav-item">  
+        <a class="nav-link js-scroll-trigger" href="#about" >ABOUT</a>
       </div>
-      <div class="col s1">
-        <a href="#menu" class="button block green">PLAN</a>
+      <div class="nav-item">
+        <a href="#menu" class="nav-link">PLAN</a>
       </div>
-      <div class="col s1">
-        <a routerLink="/price" class="button block blue">PRICE</a>
+      <div class="nav-item">
+        <a routerLink="/price" class="nav-link">PRICE</a>
       </div>
-      <div class="col s1">
-        <a href="#where" class="button block yellow">VIDEOS</a>
+      <div class="nav-item">
+        <a href="#where" class="nav-link">VIDEOS</a>
       </div>
-      <div class="col s1">
-        <a routerLink="/student-management" class="button block orange">PAGES</a>
+      <div class="nav-item">
+        <a routerLink="/student-management" class="nav-link">PAGES</a>
       </div>
-      <div class="col s1">
-        <a href="#where" class="button block pink">CONTACT</a>
+      <div class="nav-item">
+        <a href="#where" class="nav-link">CONTACT</a>
       </div>
-      <div class="col s2 container">
-          <a routerLink="/login" class="button block green col s8 right ">LOGIN</a>
+      <div class="nav-item">
+          <a routerLink="/login" class="nav-link ">LOGIN</a>
         </div>
-    </div>
   </div>
+  </nav> -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="col-sm-3 col-xs-12">
+          <div class="site-branding">
+            <a class="dark-logo" href="#"><img src="https://solveeducation.org/wp-content/uploads/Solve-Education-Logo-1000px.png"height="42" width="84" ></a>
+          </div>
+        </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          
+        <ul class="navbar-nav navbar-center" style="font-family: Tahoma,Arial; font-size: 16px;">
+          <li class="nav-item">
+            <a class="nav-link" href="#home" style="color: #00adef">TRANG CHỦ</a>
+          </li> 
+          <li class="nav-item">
+              <a class="nav-link" href="#about" style="color: #00adef">GIỚI THIỆU</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#customer" style="color: #00adef">KHÁCH HÀNG</a>
+          </li>
+          <li class="nav-item">
+              <a routerLink="/price" class="nav-link " style="color: #00adef">PRICE</a>
+          </li>
+          <li class="nav-item">
+              <a routerLink="/student-management" class="nav-link " style="color: #00adef">QUẢN LÝ</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#contact" style="color: #00adef">LIÊN HỆ</a>
+          </li>
+          <li class="nav-item">
+              <a routerLink="/login" class="nav-link " style="color:#FF8F5E">ĐĂNG NHẬP</a>
+          </li>
+         
+        </ul>
+      </div>
+    </nav>
 </body>
 </html>
