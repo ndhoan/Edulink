@@ -1,4 +1,20 @@
-import { Component, HostListener, ElementRef, OnInit } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
+
+// @Component({
+//   selector: 'app-up-coming-videos',
+//   templateUrl: './up-coming-videos.component.html',
+//   styleUrls: ['./up-coming-videos.component.css']
+// })
+// export class UpComingVideosComponent implements OnInit {
+
+//   constructor() { }
+
+//   ngOnInit() {
+//   }
+
+// }
+
+import { Component, HostListener, ElementRef } from '@angular/core';
 
 import {
   trigger,
@@ -10,25 +26,25 @@ import {
 
 
 @Component({
-    selector: 'app-new-courses',
-  templateUrl: './new-courses.component.html',
-  styleUrls: ['./new-courses.component.css'],
+  selector: 'app-new-courses',
+    templateUrl: './new-courses.component.html',
+    styleUrls: ['./new-courses.component.css'],
   animations: [
     trigger('scrollAnimation', [
       state('show', style({
         opacity: 1,
-        transform: "translateX(0)"
+        transform: "translateY(0)"
       })),
       state('hide',   style({
         opacity: 0,
-        transform: "translateX(-100%)"
+        transform: "translateY(20%)"
       })),
       transition('show => hide', animate('700ms ease-out')),
       transition('hide => show', animate('700ms ease-in'))
     ])
   ]
 })
-export class NewCoursesComponent implements OnInit{
+export class NewCoursesComponent{
 
   state = 'hide'
 
@@ -39,16 +55,14 @@ export class NewCoursesComponent implements OnInit{
       const componentPosition = this.el.nativeElement.offsetTop
       const scrollPosition = window.pageYOffset
 
-      if (scrollPosition +500 >= componentPosition) {
+      if (scrollPosition + 500 >= componentPosition) {
         this.state = 'show'
       } else {
         this.state = 'hide'
       }
 
     }
-    ngOnInit() {
-    
-       }
+
 }
 
 

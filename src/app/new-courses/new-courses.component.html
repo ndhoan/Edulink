@@ -62,9 +62,9 @@
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 </style>
-<body class="w3-light-grey w3-content" style="max-width:1350px">
+<body class="w3-light-grey w3-content" style="max-width:1350px" >
 
-  <!-- <div class="w3-row-padding w3-margin-top" [@scrollAnimation]="state">
+  <!-- <div class="w3-row-padding w3-margin-top" [@scrollAnimation]="state">  
     <div class="w3-third w3-container w3-margin-bottom">
       <img src="https://www.w3schools.com/w3css/img_nature.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
       <div class="w3-container w3-white">
@@ -87,7 +87,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </div> -->
-  <carousel [@scrollAnimation]="state">
+  <div>
+  <carousel >
       <slide>
         <img src="http://newsroom.unfccc.int/media/777629/flickr_projoshua-mayer_cpforets.jpg" alt="First slide" style="display: block; width: 100%; height:550px">
         <div class="carousel-caption d-none d-md-block">
@@ -110,7 +111,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         </div>
       </slide>
     </carousel>
-                             
+  </div>                        
                   
 </body>
 </html>  
