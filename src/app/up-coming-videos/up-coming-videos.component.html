@@ -1,70 +1,36 @@
-<!-- <html>
-
-<body style="margin-left: 100px; margin-right: 100px; line-height: 0px">
-
-  <div class="w3-container">
-    <h2 style="color: blue">Up Coming Courses</h2>
-  </div>
-
-  <div class="row padding">
-    <div class="col s3 container">
-      <a>
-        <iframe width="210" height="210" src="https://www.youtube.com/embed//EW1XfjOFxGE" frameborder="0" allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-      </a>
-      <h3>English</h3>
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
     </div>
-    <div class="col s3 container">
-      <a>
-          <iframe width="210" height="210" src="https://www.youtube.com/embed/ZPjwpv6xUj8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </a>
-      <h3>First Add</h3>
-    </div>
-    <div class="col s3 container">
-      <a>
-          <iframe width="210" height="210" src="https://www.youtube.com/embed/9TI4RJSSwhc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </a>
-      <h3>Infant Nutrition</h3>
-    </div>
-    <div class="col s3 container">
-      <a>
-          <iframe width="210" height="210" src="https://www.youtube.com/embed/0a91lbY31dI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </a>
-      <h3>Obstacle</h3>
-    </div>
-  </div>
-</body>
-
-</html> -->
-
-<!DOCTYPE html>
-<html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey w3-content" style="max-width:1800px">
-  <div class="w3-row-padding" [@scrollAnimation]="state">
-    <div class="w3-half w3-container w3-margin-bottom">
-        <iframe style="width:100%" class="w3-hover-opacity" src="https://www.youtube.com/embed/ZPjwpv6xUj8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      <div class="w3-container w3-white">
-        <p><b>Title of Video</b></p>
-        <p>This is the description of video..................</p>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
       </div>
     </div>
-    <div class="w3-half w3-container w3-margin-bottom">
-        <iframe style="width:100%" class="w3-hover-opacity" src="https://www.youtube.com/embed//EW1XfjOFxGE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <div class="w3-container w3-white">
-        <p><b>Title of Video</b></p>
-        <p>This is the description of video..................</p>
-      </div>
-    </div>
-
   </div>
-  </body>
-  </html>
+</div>
+
+<!-- FOOTER -->
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Edulink Power <a href="https://www.w3schools.com" title="Visit w3schools">gurucenter.vn</a></p>
+</footer>
