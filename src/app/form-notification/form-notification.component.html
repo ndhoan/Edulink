@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
@@ -56,12 +59,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
                 <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.addresses.controls.length > 1" (click)="removeAddress(i)"></span>
 
               </div> 
-              <div class="form-group">
+              <!-- Date-time form -->
+              <!-- <div class="form-group">
                   <input id="date" name="date" [(ngModel)]="date"
                           type="text" bsDatepicker class="form-control" />
-              </div>
+              </div> -->
               
-
+              <div class="form-group">
+                  <label class="label-control">Datetime Picker</label>
+                  <input type="text" class="form-control datetimepicker" value="10/05/2016">
+              </div>
               <!-- <div class="panel-body" [formGroupName]="i">
               </div> -->
             </div>
@@ -88,7 +95,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
   </div>
   </div>
-  
+  <script src="./assets/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="./assets/js/material-kit.js?v=2.0.2"></script>
+  <script>
+      $(document).ready(function() {
+
+          //init DateTimePickers
+          materialKit.initFormExtendedDatetimepickers();
+
+          // Sliders Init
+          materialKit.initSliders();
+      });
+  </script>
 </body>
 
 </html>
