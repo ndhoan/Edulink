@@ -1,25 +1,26 @@
-import { ManagementComponent } from './management/management.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { NavSidebarModule } from './nav-sidebar/nav-sidebar.module';
+import { ManagementModule } from './management/management.module';
+import { LoginModule } from './login/login.module';
+import { HomepageModule } from './homepage/homepage.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 
-const routes: Routes =[
-  { path: 'home', component: HomepageComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'management', component: ManagementComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
-]
+const routes: Routes =[]
 
 @NgModule({
   imports: [
-    CommonModule,
-    BrowserModule,
-    RouterModule.forRoot(routes)
+    HomepageModule,
+    LoginModule,
+    ManagementModule,
+    // NavSidebarModule,
+    RouterModule.forRoot(routes),
+    CommonModule
+  ],  
+  declarations:[
+
   ],
-  exports: [
-  ],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

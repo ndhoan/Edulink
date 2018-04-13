@@ -1,35 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-
-import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { TopmenuComponent } from './homepage/topmenu/topmenu.component';
-import { HomeComponent } from './homepage/home/home.component';
-import { IntroComponent } from './homepage/intro/intro.component';
-import { ServiceComponent } from './homepage/service/service.component';
-import { ContactComponent } from './homepage/contact/contact.component';
-import { FooterComponent } from './homepage/footer/footer.component';
+import { AppRoutingModule } from './app-routing.module';
 import { ManagementComponent } from './management/management.component';
 import { LoginComponent } from './login/login.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { TopbarComponent } from './management/topbar/topbar.component';
+import { SidebarComponent } from './management/sidebar/sidebar.component';
+import { RestComponent } from './management/rest/rest.component';
+import { NavSidebarComponent } from './nav-sidebar/nav-sidebar.component';
+import { FormNotificationComponent } from './nav-sidebar/form-notification/form-notification.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent,
-    TopmenuComponent,
-    HomeComponent,
-    IntroComponent,
-    ServiceComponent,
-    ContactComponent,
-    FooterComponent,
-    ManagementComponent,
-    LoginComponent
+
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule
   ],
   providers: [],

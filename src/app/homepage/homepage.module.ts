@@ -7,10 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IntroComponent } from './intro/intro.component';
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [
+  {path: '', component: HomepageComponent }
+]
 
 @NgModule({
   imports: [ 
-    
+    RouterModule.forChild(routes),
     CommonModule
   ],
   declarations: [
@@ -22,6 +27,6 @@ import { IntroComponent } from './intro/intro.component';
     ContactComponent,
     FooterComponent
   ],
-  exports:[ HomepageComponent ],
+  exports:[ TopmenuComponent, FooterComponent ]
 })
 export class HomepageModule { }
