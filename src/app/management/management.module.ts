@@ -1,3 +1,4 @@
+import { FormNotificationModule } from './../form-notification/form-notification.module';
 import { HomepageModule } from './../homepage/homepage.module';
 import { TopbarComponent } from './topbar/topbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
