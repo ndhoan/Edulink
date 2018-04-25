@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('edulink App', () => {
+describe('edu-hub App', () => {
   let page: AppPage;
 
   beforeEach(() => {

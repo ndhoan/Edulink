@@ -1,21 +1,23 @@
-import { HomepageModule } from './../homepage/homepage.module';
-import { Routes, RouterModule } from '@angular/router';
+import { CommercePageModule } from './../commerce-page/commerce-page.module';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login.component';
+import { CommonModule } from '@angular/common';
 
-const routes: Routes = [
-  {path: 'login', component: LoginComponent},
-]
 
-@NgModule({
-  imports: [
-    HomepageModule,
-    RouterModule.forChild(routes),
-    CommonModule
-  ],
-  declarations: [
-    LoginComponent,
+const routesConfig: Routes = [
+    {path: 'login', component: LoginComponent, data: { animation: 'login' } }
   ]
-})
-export class LoginModule { }
+
+  @NgModule({
+    imports: [
+            CommercePageModule,
+            RouterModule.forChild(routesConfig),
+            CommonModule
+      ],
+    declarations: [
+        LoginComponent,
+    ],
+  })
+
+  export class LoginModule{}

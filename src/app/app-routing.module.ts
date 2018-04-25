@@ -1,26 +1,30 @@
-import { NavSidebarModule } from './nav-sidebar/nav-sidebar.module';
-import { ManagementModule } from './management/management.module';
-import { LoginModule } from './login/login.module';
-import { HomepageModule } from './homepage/homepage.module';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { StudentManagementModule } from './student-management/student-management.module';
+import { CommercePageModule } from './commerce-page/commerce-page.module';
+import { PricePageModule } from './price-page/price-page.module';
+import { CommonModule } from '@angular/common';
+import { LoginModule } from './login/login.module';
+import { FormNotificationModule } from './form-notification/form-notification.module';
 
-const routes: Routes =[]
+const routesConfig: Routes = [
+ 
+  ]
 
-@NgModule({
-  imports: [
-    HomepageModule,
-    LoginModule,
-    ManagementModule,
-    // NavSidebarModule,
-    RouterModule.forRoot(routes),
-    CommonModule
-  ],  
-  declarations:[
+  @NgModule({
+    imports: [
+        CommercePageModule,
+        StudentManagementModule,
+        PricePageModule,
+        LoginModule,
+        FormNotificationModule, 
+        RouterModule.forRoot(routesConfig),
+        CommonModule
+      ],
+    declarations: [
+        
+    ],
+      exports: [RouterModule]
+  })
 
-  ],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+  export class AppRoutingModule{}
