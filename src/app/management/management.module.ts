@@ -1,3 +1,4 @@
+import { ManagementRoutingModule } from './management.routing.module';
 import { RouterModule } from '@angular/router';
 import { HomepageModule } from './../homepage/homepage.module';
 import { TopbarComponent } from './topbar/topbar.component';
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     RouterModule,
     HomepageModule,
-    CommonModule
+    CommonModule,
+    ManagementRoutingModule
   ],
   declarations: [
       ManagementComponent,

@@ -1,7 +1,3 @@
-// Management Page:
-import { ManagementComponent } from './management/management.component';
-import { FormNotificationComponent } from './management/form-notification/form-notification.component';
-
 //Login :
 import { LoginComponent } from './login/login.component';
 
@@ -16,17 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes =[
   {path: '', component: HomepageComponent },
-  {path: 'login', component: LoginComponent},
-  {
-    path: 'management', 
-    component: ManagementComponent, 
-    children: [
-      { 
-        path: 'notification', 
-        component: FormNotificationComponent
-      }
-    ]
-  },
+  {path: 'login', component: LoginComponent}
 ]
 
 @NgModule({

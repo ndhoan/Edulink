@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { ManagementModule } from './../management.module';
 import { NgModule } from '@angular/core';
 import { FormNotificationComponent } from './form-notification.component';
