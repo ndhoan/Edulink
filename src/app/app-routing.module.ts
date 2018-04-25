@@ -1,4 +1,3 @@
-import { NavSidebarModule } from './nav-sidebar/nav-sidebar.module';
 import { ManagementModule } from './management/management.module';
 import { LoginModule } from './login/login.module';
 import { HomepageModule } from './homepage/homepage.module';
@@ -14,7 +13,7 @@ const routes: Routes =[]
     HomepageModule,
     LoginModule,
     ManagementModule,
-    // NavSidebarModule,
+    // SidebarModule,
     RouterModule.forRoot(routes),
     CommonModule
   ],  

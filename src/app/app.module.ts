@@ -11,8 +11,6 @@ import { RouterModule } from '@angular/router';
 import { TopbarComponent } from './management/topbar/topbar.component';
 import { SidebarComponent } from './management/sidebar/sidebar.component';
 import { RestComponent } from './management/rest/rest.component';
-import { NavSidebarComponent } from './nav-sidebar/nav-sidebar.component';
-import { FormNotificationComponent } from './nav-sidebar/form-notification/form-notification.component';
 
 
 @NgModule({

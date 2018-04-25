@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 const routes: Routes= [
   {path: 'management', component: ManagementComponent},
 ]
+
 @NgModule({
   imports: [
     HomepageModule,
@@ -23,6 +24,6 @@ const routes: Routes= [
       SidebarComponent,
       TopbarComponent,
   ],
-  exports: [ ManagementComponent]
+  exports: [ TopbarComponent, SidebarComponent]
 })
 export class ManagementModule { }
