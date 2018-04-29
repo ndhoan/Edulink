@@ -1,4 +1,4 @@
-import { RouterModule } from '@angular/router';
+import { RouterModule, Route } from '@angular/router';
 import { ManagementModule } from './../management.module';
 import { NgModule } from '@angular/core';
 import { FormNotificationComponent } from './form-notification.component';
@@ -7,7 +7,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 // import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 // import { TimepickerModule } from 'ngx-bootstrap/timepicker';
-
 
 
 @NgModule({

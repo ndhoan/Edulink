@@ -1,27 +1,26 @@
-//Login :
+// Login:
 import { LoginComponent } from './login/login.component';
 
-//Homepage : 
+// Homepage: 
 import { HomepageComponent } from './homepage/homepage.component';
 
-//Angular Cores : 
+// Angular Cores: 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes =[
+const routes: Routes = [
   {path: '', component: HomepageComponent },
   {path: 'login', component: LoginComponent}
 ]
 
 @NgModule({
   imports: [
-    // SidebarModule,
     RouterModule.forRoot(routes),
     CommonModule
-  ],  
-  declarations:[
+  ],
+  declarations: [
 
   ],
   exports: [RouterModule]
