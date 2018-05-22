@@ -1533,7 +1533,8 @@ pre {
     clear: both; }
 
 .row, .chat-window-container, .chat-window .msg-container {
-  margin-left: -15px;
+  margin-top: 50px;
+  margin-left: 190px;
   margin-right: -15px; }
   .row:before, .chat-window-container:before, .chat-window .msg-container:before, .row:after, .chat-window-container:after, .chat-window .msg-container:after {
     content: " ";

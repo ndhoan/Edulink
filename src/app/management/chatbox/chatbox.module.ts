@@ -37,6 +37,6 @@ import { FromNowPipe } from './pipes/from-now.pipe';
     MessagesService, ThreadsService, UsersService
   ],
 
-  // bootstrap: [AppComponent]
+  bootstrap: [AppComponent]
 })
 export class ChatboxModule { }
