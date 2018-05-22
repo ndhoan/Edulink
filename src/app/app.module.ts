@@ -1,3 +1,4 @@
+import { ChatboxModule } from './management/chatbox/chatbox.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,7 @@ import { LoginModule } from './login/login.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { ManagementModule } from './management/management.module';
 import { FormNotificationModule } from './management/form-notification/form-notification.module';
+import { ChatboxComponent } from './management/chatbox/chatbox.component';
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { FormNotificationModule } from './management/form-notification/form-noti
     AppComponent,
   ],
   imports: [
+    ChatboxModule,
     FormNotificationModule,
     HomepageModule,
     LoginModule,

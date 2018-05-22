@@ -1,3 +1,4 @@
+import { ChatboxComponent } from './chatbox/chatbox.component';
 import { TopbarComponent } from './topbar/topbar.component';
 // Management Page:
 import { ManagementComponent } from './management.component';
@@ -21,6 +22,10 @@ const managementRoutes: Routes = [
       {
         path: '',
         component: RestComponent
+      },
+      {
+        path: 'chatbox',
+        component: ChatboxComponent
       }
     ]
   },
