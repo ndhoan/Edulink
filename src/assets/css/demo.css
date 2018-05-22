@@ -19,9 +19,9 @@ h4 {
 }  
 .jumbotron {
     background: url("http://www.gettingsmart.com/wp-content/uploads/2017/02/elementary-students-and-teacher-using-mobile-app-on-tablet-Feature-Image.jpg") fixed;
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
-    /* height: 670px; */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 670px;
     background-size: cover; 
     background-color: blueviolet;    
     color: #fff;
