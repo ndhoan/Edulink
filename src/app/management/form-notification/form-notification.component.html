@@ -20,47 +20,45 @@
       <!-- <app-topbar></app-topbar>
       <app-sidebar></app-sidebar> -->
   <div class="w3-main" style="margin-left:300px;margin-top:43px;">
-
     <div class="container">
       <div class="row">
         <div class="col-xs-11">
           <div class="margin-20">
             <h4>Đăng thông báo</h4>
           </div>
-          <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+          <form [formGroup]="myNotificationFormHolder" novalidate (ngSubmit)="save(myNotificationFormHolder)">
             <div class="form-group">
-              <label>Tiêu đề</label>
-              <input type="text" class="form-control" formControlName="name" placeholder="Tiêu đề...">
-              <small *ngIf="!myForm.controls.name.valid" class="text-danger">
+              <label for="title">Tiêu đề</label>
+              <input type="text" class="form-control" formControlName="title" placeholder="Tiêu đề...">
+              <!-- <small *ngIf="!myNotificationFormHolder.controls.name.valid" class="text-danger">
                 Tiều đề (tối thiểu 5 kí tự).
-              </small>
+              </small> -->
+              
+              <label class="form-control" >Miêu tả</label>
+              <!-- <input type="text" class="form-control" formControlName="description" placeholder="Miêu tả..."> -->
+              <textarea type="text" rows="4" cols="50" class="form-control" formControlName="description" placeholder="Miêu tả..."> 
+              </textarea>
+              <form action="http://www.example.com/upload.php" method="post">
+                <p>Upload pdf file:</p>
+                <input type="file" name="pdf_file" />
+              </form>
+              <label class="form-control" >Đối tượng</label>
+              <select id="doi_tuong" formControlName="target" name="Đối tượng">
+                <option value="Toàn trường">Toàn trường</option>
+                <option value="Lớp">Lớp</option>
+                <option value="Cá nhân">Cá nhân</option>
+              </select>
               <form action="/action_page.php">
 
-                <label>Miêu tả</label>
-                <!-- <input type="text" class="form-control" formControlName="description" placeholder="Miêu tả..."> -->
-                <textarea rows="4" cols="50" class="form-control" ng-model="text" formControlName="description" placeholder="Miêu tả..."> 
-                </textarea>
-
-                <form action="http://www.example.com/upload.php" method="post">
-                  <p>Upload pdf file:</p>
-                  <input type="file" name="pdf_file" />
-                </form>
-                <label for="doi_tuong">Đối tượng</label>
-                <select id="doi_tuong" name="Đối tượng">
-                  <option value="Toàn trường">Toàn trường</option>
-                  <option value="Lớp">Lớp</option>
-                  <option value="Cá nhân">Cá nhân</option>
-                </select>
               </form>
             </div>
-            <!--addresses-->
-            <div formArrayName="addresses">
+            <!--Schedules Times Intervals-->
+            <div formArrayName="titles">
               
-              <div *ngFor="let address of myForm.controls.addresses.controls; let i=index" class="panel panel-default">
+              <div *ngFor="let title of myNotificationFormHolder.controls.titles.controls; let i=index" class="panel panel-default">
                 <div class="panel-heading">
                   <span>Chọn thời gian {{i + 1}}</span>
-                  <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.addresses.controls.length > 1" (click)="removeAddress(i)"></span>
-
+                  <span class="glyphicon glyphicon-remove pull-right" *ngIf="myNotificationFormHolder.controls.titles.controls.length > 1" (click)="removeTitle(i)"></span>
                 </div> 
                 <!-- Date-time form -->
                 <!-- <div class="form-group">
@@ -78,13 +76,14 @@
             </div>
 
             <div class="margin-20">
-              <button (click)="addAddress()" style="cursor: default">
+              <button  style="cursor: default">
                 Thêm khoảng thời gian +
               </button>
             </div>
 
             <div class="margin-20">
-              <button type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button>
+              <button (click)="postNotification" type="submit" class="btn btn-primary pull-right" [disabled]="false">Submit</button>
+              <!-- <button (click)="postNotification" type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button> -->
             </div>
             <div class="clearfix"></div>
 
