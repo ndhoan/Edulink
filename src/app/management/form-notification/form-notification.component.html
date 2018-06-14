@@ -25,74 +25,113 @@
         <div class="col-xs-11">
           <div class="margin-20">
             <h4>Đăng thông báo</h4>
-          </div>
-          <form [formGroup]="myNotificationFormHolder" novalidate (ngSubmit)="save(myNotificationFormHolder)">
-            <div class="form-group">
-              <label for="title">Tiêu đề</label>
-              <input type="text" class="form-control" formControlName="title" placeholder="Tiêu đề...">
-              <!-- <small *ngIf="!myNotificationFormHolder.controls.name.valid" class="text-danger">
-                Tiều đề (tối thiểu 5 kí tự).
-              </small> -->
+            <form [formGroup]="notificationForm"  (ngSubmit)="onSubmit(notificationForm.value)">
               
-              <label class="form-control" >Miêu tả</label>
-              <!-- <input type="text" class="form-control" formControlName="description" placeholder="Miêu tả..."> -->
-              <textarea type="text" rows="4" cols="50" class="form-control" formControlName="description" placeholder="Miêu tả..."> 
-              </textarea>
-              <form action="http://www.example.com/upload.php" method="post">
-                <p>Upload pdf file:</p>
-                <input type="file" name="pdf_file" />
-              </form>
-              <label class="form-control" >Đối tượng</label>
-              <select id="doi_tuong" formControlName="target" name="Đối tượng">
-                <option value="Toàn trường">Toàn trường</option>
-                <option value="Lớp">Lớp</option>
-                <option value="Cá nhân">Cá nhân</option>
-              </select>
-              <form action="/action_page.php">
-
-              </form>
-            </div>
-            <!--Schedules Times Intervals-->
-            <div formArrayName="titles">
-              
-              <div *ngFor="let title of myNotificationFormHolder.controls.titles.controls; let i=index" class="panel panel-default">
-                <div class="panel-heading">
-                  <span>Chọn thời gian {{i + 1}}</span>
-                  <span class="glyphicon glyphicon-remove pull-right" *ngIf="myNotificationFormHolder.controls.titles.controls.length > 1" (click)="removeTitle(i)"></span>
-                </div> 
-                <!-- Date-time form -->
-                <!-- <div class="form-group">
-                    <input id="date" name="date" [(ngModel)]="date"
-                            type="text" bsDatepicker class="form-control" />
-                </div> -->
+              <div class="form-group">
+                <!-- <label for="title">Tiêu đề</label>
+                <input type="text" class="form-control" formControlName="title" placeholder="Tiêu đề..."> -->
                 
-                <div class="form-group">
-                    <label class="label-control">Datetime Picker</label>
-                    <input type="text" class="form-control datetimepicker" value="10/05/2016">
-                </div>
-                <!-- <div class="panel-body" [formGroupName]="i">
-                </div> -->
+                <label for="title">Tiêu đề</label>
+                <input type="text"
+                       id="title"
+                       placeholder="Tiêu đề"
+                       [formControl]="notificationForm.controls['title']">
+                <!-- <small *ngIf="!myNotificationFormHolder.controls.name.valid" class="text-danger">
+                  Tiều đề (tối thiểu 5 kí tự).
+                </small> -->
+                <div>
+                <label for="description" >Miêu tả</label>
+                <!-- <input type="text" class="form-control" formControlName="description" placeholder="Miêu tả..."> -->
+                <textarea type="text" rows="4" cols="50" [formControl]="notificationForm.controls['description']" placeholder="Miêu tả..."> 
+                </textarea>
+
               </div>
-            </div>
-
-            <div class="margin-20">
-              <button  style="cursor: default">
-                Thêm khoảng thời gian +
-              </button>
-            </div>
-
-            <div class="margin-20">
-              <button (click)="postNotification" type="submit" class="btn btn-primary pull-right" [disabled]="false">Submit</button>
-              <!-- <button (click)="postNotification" type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button> -->
-            </div>
-            <div class="clearfix"></div>
-
-            <!-- <div class="margin-20">
-            <div>myForm details:-</div>
-            <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
-            <pre>form value: <br>{{myForm.value | json}}</pre>
+                <form action="http://www.example.com/upload.php" method="post">
+                  <p>Upload pdf file:</p>
+                  <input type="file" name="pdf_file" />
+                </form>
+                <label class="form-control" >Đối tượng</label>
+                <select id="doi_tuong" formControlName="target" name="Đối tượng">
+                  <option value="Toàn trường">Toàn trường</option>
+                  <option value="Lớp">Lớp</option>
+                  <option value="Cá nhân">Cá nhân</option>
+                </select>
+                <form action="/action_page.php">
+  
+                </form>
+              </div>
+              <!--Schedules Times Intervals-->
+              <div formArrayName="time">
+                
+                <div *ngFor="let time of notificationForm.controls.time.controls; let i=index" class="panel panel-default">
+                  <div class="panel-heading">
+                    <span>Chọn thời gian {{i + 1}}</span>
+                    <span class="glyphicon glyphicon-remove pull-right" *ngIf="notificationForm.controls.time.controls.length > 1" (click)="removeTitle(i)"></span>
+                  </div> 
+                  <!-- Date-time form -->
+                  <!-- <div class="form-group">
+                      <input id="date" name="date" [(ngModel)]="date"
+                              type="text" bsDatepicker class="form-control" />
+                  </div> -->
+                  
+                  <div class="form-group">
+                      <label class="label-control">Datetime Picker</label>
+                      <input type="text" class="form-control datetimepicker" value="10/05/2016">
+                  </div>
+                  <!-- <div class="panel-body" [formGroupName]="i">
+                  </div> -->
+                </div>
+              </div>
+  
+              <div class="margin-20">
+                <button  style="cursor: default">
+                  Thêm khoảng thời gian 
+                </button>
+              </div>
+  
+              <div class="form-group">
+                <button (click)="onFormSubmit" type="submit" class="btn btn-primary pull-right" [disabled]="false">Submit</button>
+                <!-- <button (click)="postNotification" type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button> -->
+              </div>
+              <div class="clearfix"></div>
+  
+              <!-- <div class="margin-20">
+              <div>myForm details:-</div>
+              <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
+              <pre>form value: <br>{{myForm.value | json}}</pre>
+            </div> -->
+            </form>
+          </div>
+     
+          <!-- <div class="ui raised segment">
+            <h2 class="ui header">Đăng thông báo</h2>
+            <form [formGroup]="notificationForm"
+                  (ngSubmit)="onSubmit(notificationForm.value)"
+                  class="ui form">
+              <div class="field">
+                <label for="title">Tiêu đề</label>
+                <input type="text"
+                       id="title"
+                       placeholder="Tiêu đề"
+                       [formControl]="notificationForm.controls['title']">
+              </div>
+              <div class="field">
+                <label for="description">Mô tả</label>
+                <input type="text"
+                       id="description"
+                       placeholder="Mô tả"
+                       [formControl]="notificationForm.controls['description']">
+              </div>
+              <div class="field">
+                <label for="target">Đối tượng</label>
+                <input type="text"
+                       id="target"
+                       placeholder="Đối tượng"
+                       [formControl]="notificationForm.controls['target']">
+              </div>
+              <button type="submit" class="ui button">Submit</button>
+            </form>
           </div> -->
-          </form>
         </div>
       </div>
     </div>

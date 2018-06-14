@@ -1,7 +1,9 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormGroup, FormArray, FormBuilder } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'app-form-notification',
   templateUrl: './form-notification.component.html',
@@ -10,101 +12,126 @@ import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 
 export class FormNotificationComponent implements OnInit {
 
-  public myNotificationFormHolder: FormGroup;
-  constructor(private notificationFormHolderBuilder: FormBuilder) { }
-
-  ngOnInit() {
-      this.myNotificationFormHolder = this.notificationFormHolderBuilder.group({
-        title: ['', [Validators.required, Validators.minLength(5)]],
-        // titles: this.notificationFormHolderBuilder.array([
-        //       this.initTitle(),
-        //   ]),
-        description: ['', []],
-        target: ['', []],
-      });
-  }
-  public setMoment(moment: any): any {
-    this.setMoment = moment;
-    // Do whatever you want to the return object 'moment'
-  }
-
-  initDescription() {
-      return this.notificationFormHolderBuilder.group({
-           });
-  }
-
-  addDescription() {
-      const control = <FormArray>this.myNotificationFormHolder.controls['Descriptions'];
-      control.push(this.initTitle());
-  }
-
-  removeDescription(i: number) {
-      const control = <FormArray>this.myNotificationFormHolder.controls['Descriptions'];
-      control.removeAt(i);
-  }
-
-  initTitle() {
-    return this.notificationFormHolderBuilder.group({
-        street: ['', Validators.required],
-        postcode: ['']
+  notificationForm: FormGroup;
+  formSubmitted = false;
+  constructor(notificationFormBuilder: FormBuilder) {
+    this.notificationForm = notificationFormBuilder.group({
+      title: [''],
+      description: [''],
+      target: '',
     });
-}
+   }
 
-addTitle() {
-    const control = <FormArray>this.myNotificationFormHolder.controls['Titles'];
-    control.push(this.initTitle());
-}
+  onSubmit(value: string): void {
+    console.log(value);
+  }
+  ngOnInit() {
+      // this.NotificationForm = this.notificationFormBuilder.group({
+      //   title: ['', Validators.required, Validators.minLength(5)],
+      //   // titles: this.notificationFormHolderBuilder.array([
+      //   //       this.initTitle(),
+      //   //   ]),
+      //   description: '',
+      //   target: '',
+      // });
+      // this.createForm();
+  }
 
-removeTitle(i: number) {
-    const control = <FormArray>this.myNotificationFormHolder.controls['Titles'];
-    control.removeAt(i);
-}
+  // public setMoment(moment: any): any {
+  //   this.setMoment = moment;
+  //   // Do whatever you want to the return object 'moment'
+  // }
+
+  // createForm() {
+  //   this.notificationForm = this.notificationFormBuilder.group(
+  //     {
+  //       title: ['', Validators.required, Validators.minLength(5)],
+  //       description: '',
+  //       target: '',
+  //     }
+  //   );
+  // }
 
 
-initTarget() {
-  return this.notificationFormHolderBuilder.group({
-       });
-}
+//   initDescription() {
+//       return this.notificationFormBuilder.group({
+//            });
+//   }
 
-addTarget() {
-  const control = <FormArray>this.myNotificationFormHolder.controls['Targets'];
-  control.push(this.initTitle());
-}
+//   addDescription() {
+//       const control = <FormArray>this.NotificationForm.controls['Descriptions'];
+//       control.push(this.initTitle());
+//   }
 
-removeTarget(i: number) {
-  const control = <FormArray>this.myNotificationFormHolder.controls['Targets'];
-  control.removeAt(i);
-}
+//   removeDescription(i: number) {
+//       const control = <FormArray>this.NotificationFormHolder.controls['Descriptions'];
+//       control.removeAt(i);
+//   }
 
-  save(model: Customer) {
+//   initTitle() {
+//     return this.notificationFormHolderBuilder.group({
+//         street: ['', Validators.required],
+//         postcode: ['']
+//     });
+// }
+
+// addTitle() {
+//     const control = <FormArray>this.NotificationFormHolder.controls['Titles'];
+//     control.push(this.initTitle());
+// }
+
+// removeTitle(i: number) {
+//     const control = <FormArray>this.NotificationFormHolder.controls['Titles'];
+//     control.removeAt(i);
+// }
+
+
+// initTarget() {
+//   return this.notificationFormHolderBuilder.group({
+//        });
+// }
+
+// addTarget() {
+//   const control = <FormArray>this.NotificationFormHolder.controls['Targets'];
+//   control.push(this.initTitle());
+// }
+
+// removeTarget(i: number) {
+//   const control = <FormArray>this.NotificationFormHolder.controls['Targets'];
+//   control.removeAt(i);
+// }
+
+  save(model: Notification) {
       // call API to save
       // ...
       console.log(model);
   }
 
-  postNotification(title: string, description: string, doi_tuong: string): boolean {
-    // TODO: serialize title, description, target.
-    function censor(key, value) {
-        if (typeof(value) === 'string') {
-          return undefined;
-        }
-        return value;
-    }
-    const foo = { title: 'title', description: 'description', doi_tuong : 'target'};
-    const jsonString = JSON.stringify(foo, censor);
-    console.log(jsonString.toString());
+  // onFormSubmit() {
+  //   // TODO: serialize title, description, target.
+  //     // function censor(key, value) {
+  //     //     if (typeof(value) === 'string') {
+  //     //       return undefined;
+  //     //     }
+  //     //     return value;
+  //     // }
+  //     // const foo = { title: 'title', description: 'description', doi_tuong : 'target'};
+  //     // const jsonString = JSON.stringify(foo, censor);
+  //     // console.log(jsonString.toString());
 
-    return true;
-  }
+  //     // return true;
+  //     const data = JSON.stringify(this.notificationForm.value);
+  //     console.log('-----Team in JSON Format-----');
+  //     console.log(data);
+  //     this.formSubmitted = true;
+  //     this.notificationForm.reset();
+  // }
 }
 
-export interface Customer {
-  name: string;
-  titles: Title[];
-  description: string;
-}
 
-export interface Title {
-  street: string;
-  postcode: string;
-}
+
+// export interface Notification {
+//   title: string;
+//   description: string;
+//   target: string;
+// }
